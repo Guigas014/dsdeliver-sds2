@@ -1,6 +1,7 @@
 .home-container {
-  padding-top: 100px;
-  height: calc(100vh - 226px);
+  /*padding-top: 100px;*/
+  /*margin-bottom: 100px;*/
+  height: calc(100vh - 254px);
 }
 
 .home-container h1 {
@@ -10,6 +11,7 @@
 .home-content {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .home-title {
