@@ -1,7 +1,6 @@
 .home-container {
-  /*padding-top: 100px;*/
-  /*margin-bottom: 100px;*/
-  height: calc(100vh - 254px);
+  /*height: calc(100vh - 154px);*/
+  height: 80vh;
 }
 
 .home-container h1 {
@@ -12,6 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 80%;
 }
 
 .home-title {
@@ -21,6 +22,8 @@
   letter-spacing: -0.015em;
   color: var(--dark-color);
   margin-bottom: 40px !important;
+
+  height: 50%;
 }
 
 .home-subtitle {
@@ -30,6 +33,9 @@
   letter-spacing: -0.015em;
   color: var(--secondary-color);
   margin-bottom: 30px;
+
+  height: 25%;
+
 }
 
 .home-btn-order {
@@ -50,5 +56,10 @@
 .home-btn-order:hover {
   background-color: var(--primary-hover-color);
   transform: scale(1.01);
+}
+
+.home-image {
+  height: 55vh;
+
 }
 
