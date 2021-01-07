@@ -1,6 +1,7 @@
 .main-footer {
   height: 10vh;
   padding-top: 15px;
+  align-items: flex-end;
 
   background-color: var(--dark-color);
   font-weight: normal;
