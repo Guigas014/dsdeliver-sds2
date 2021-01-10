@@ -6,16 +6,23 @@ import Navbar from '../Navbar';
 import StepsHeader from './StepsHeader';
 import ProductsList from './ProductsList';
 import OrderLocation from './OrderLocation';
-
+import OrderSummary from './OrderSummary';
 import Footer from '../Footer';
+
+import { checkIsSelected } from './helpers';
 
 import './styles.css';
 
 
 function Orders() {
   const [ products, setProducts ] = useState<Product[]>([])
+  const [ selectedProducts, setSelectedProducts ] = useState<Product[]>([])
   const [ orderLocation, setOrderLocation ] = useState<OrderLocationData>()
-  console.log(products)
+  
+  const totalPrice =selectedProducts.reduce((sum, item) => {
+    return sum + item.price
+  }, 0)
+
 
   useEffect(() => {
     fetchProducts()
@@ -24,6 +31,17 @@ function Orders() {
   }, [])
 
 
+  const handleSelectProduct = (product: Product) => {
+    const isAlreadySelected = checkIsSelected(selectedProducts, product)
+
+    if (isAlreadySelected) {
+      const selected = selectedProducts.filter(item => item.id !== product.id);
+      setSelectedProducts(selected);
+    } else {
+      setSelectedProducts(previous => [...previous, product]);
+    }
+  }
+
 
 
   return (
@@ -31,8 +49,16 @@ function Orders() {
       <Navbar />
 
       <StepsHeader />
-      <ProductsList products={products} />
+      <ProductsList
+        products={products}
+        onSelectProduct={handleSelectProduct}
+        selectedProducts={selectedProducts}
+      />
       <OrderLocation onChangeLocation={location => setOrderLocation(location)} />
+      <OrderSummary
+        amount={selectedProducts.length} 
+        totalPrice={totalPrice} 
+      />
 
       <Footer />
     </div>
