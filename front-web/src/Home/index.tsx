@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as MainImage } from '../Images/main.svg';
 
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+//import Navbar from '../Navbar';
+//import Footer from '../Footer';
 
 import './styles.css';
 
@@ -11,7 +11,6 @@ function Home() {
   return (
 
     <div className="home-container">
-      <Navbar />
 
       <div className="home-content">
         <div className="home-actions">
@@ -29,7 +28,6 @@ function Home() {
         </div>
       </div>
       
-      <Footer />
     </div>
   )
 }
