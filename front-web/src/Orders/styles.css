@@ -260,3 +260,15 @@
   transform: scale(1.01);
 }
 
+.loading {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 34px;
+  letter-spacing: -0.015em;
+  color: var(--primary-color);
+  margin-top: 250px;
+  margin-bottom: 250px;
+
+  text-align: center;
+}
+

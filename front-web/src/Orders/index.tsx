@@ -17,18 +17,22 @@ function Orders() {
   const [ products, setProducts ] = useState<Product[]>([])
   const [ selectedProducts, setSelectedProducts ] = useState<Product[]>([])
   const [ orderLocation, setOrderLocation ] = useState<OrderLocationData>()
-  
+  const [ isLoading, setIsLoading ] = useState(false);   
+
   const totalPrice =selectedProducts.reduce((sum, item) => {
     return sum + item.price
   }, 0)
 
 
   useEffect(() => {
+    setIsLoading(true)
+
     fetchProducts()
       .then(response => setProducts(response.data))
       .catch(() => {
         toast.warning('Erro ao listar os produtos');
       })
+      .finally(() => setIsLoading(false))
   }, [])
 
 
@@ -62,23 +66,31 @@ function Orders() {
 
 
   return (
-    <div className="orders-container">
+    isLoading ? (
+      <h3 className="loading">Buscando pedidos...</h3>
+    )
+    : (
+      <div className="orders-container">
 
-      <StepsHeader />
-      <ProductsList
-        products={products}
-        onSelectProduct={handleSelectProduct}
-        selectedProducts={selectedProducts}
-      />
-      <OrderLocation onChangeLocation={location => setOrderLocation(location)} />
-      <OrderSummary
-        amount={selectedProducts.length} 
-        totalPrice={totalPrice} 
-        onSubmit={handleSubmit}
-      />
+        <StepsHeader />
+        <ProductsList
+          products={products}
+          onSelectProduct={handleSelectProduct}
+          selectedProducts={selectedProducts}
+        />
+        <OrderLocation onChangeLocation={location => setOrderLocation(location)} />
+        <OrderSummary
+          amount={selectedProducts.length} 
+          totalPrice={totalPrice} 
+          onSubmit={handleSubmit}
+        />
 
-    </div>
-  ) 
+      </div>
+
+    
+
+  )) 
+
 }
 
 export default Orders;
