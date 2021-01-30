@@ -67,7 +67,7 @@ function Orders() {
 
   return (
     isLoading ? (
-      <h3 className="loading">Buscando produtos...</h3>
+      <div className="loading"></div>
     )
     : (
       <div className="orders-container">

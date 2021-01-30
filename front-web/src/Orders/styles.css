@@ -260,6 +260,13 @@
   transform: scale(1.01);
 }
 
+
+@keyframes load {
+  0% { content: 'Buscando produtos .'; }
+  33% { content: 'Buscando produtos  .'; }
+  66% { content: 'Buscando produtos    .'; }
+}
+
 .loading {
   font-weight: bold;
   font-size: 36px;
@@ -271,4 +278,10 @@
 
   text-align: center;
 }
+
+.loading::after {
+  animation: load 4s infinite alternate ease-in-out;
+  content: '';
+}
+
 
