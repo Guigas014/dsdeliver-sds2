@@ -262,9 +262,9 @@
 
 
 @keyframes load {
-  0% { content: 'Buscando produtos .'; }
-  33% { content: 'Buscando produtos  .'; }
-  66% { content: 'Buscando produtos    .'; }
+  0% { content: '01'; }
+  33% { content: '02'; }
+  66% { content: '03'; }
 }
 
 .loading {
@@ -275,13 +275,13 @@
   color: var(--primary-color);
   margin-top: 250px;
   margin-bottom: 250px;
-
+  content: '';
+  
   text-align: center;
 }
 
 .loading::after {
   animation: load 4s infinite alternate ease-in-out;
-  content: '';
 }
 
 
