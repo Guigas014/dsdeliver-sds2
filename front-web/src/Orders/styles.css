@@ -275,13 +275,14 @@
   color: var(--primary-color);
   margin-top: 250px;
   margin-bottom: 250px;
-  content: '';
+  
   
   text-align: center;
 }
 
 .loading::after {
   animation: load 4s infinite alternate ease-in-out;
+  content: '';
 }
 
 
