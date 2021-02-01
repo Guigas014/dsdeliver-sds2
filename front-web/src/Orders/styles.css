@@ -262,9 +262,15 @@
 
 
 @keyframes load {
+<<<<<<< HEAD
   0% { content: 'Buscando produtos.'; }
   33% { content: 'Buscando produtos .'; }
   66% { content: 'Buscando produtos  .'; }
+=======
+  0% { content: '01'; }
+  33% { content: '02'; }
+  66% { content: '03'; }
+>>>>>>> 86b5ebc82d7d3f7d45ae255efc129675fe5cec53
 }
 
 .loading {
@@ -275,7 +281,8 @@
   color: var(--primary-color);
   margin-top: 250px;
   margin-bottom: 250px;
-
+  
+  
   text-align: center;
 }
 
