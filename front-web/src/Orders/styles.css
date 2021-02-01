@@ -262,9 +262,9 @@
 
 
 @keyframes load {
-  0% { content: 'Buscando produtos .'; }
-  33% { content: 'Buscando produtos  .'; }
-  66% { content: 'Buscando produtos    .'; }
+  0% { content: 'Buscando produtos.'; }
+  33% { content: 'Buscando produtos .'; }
+  66% { content: 'Buscando produtos  .'; }
 }
 
 .loading {
